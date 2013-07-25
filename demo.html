@@ -12,7 +12,7 @@
 	{
 		$("#check").click(function()
 		{
-			//isCreditCard retuns true or false
+			//isCreditCard retuns boolean
 			if($("#card").isCreditCard())
 			{
 				$("#card").css('border','2px solid green');
@@ -27,10 +27,11 @@
 </head>
 <body>
 <form>
-<p>This demo starts with a valid credit card number. Change anything in it and most likely you will get a false one.
+<p>This demo starts with a valid credit card number. Change anything in it and most likely you will get a false one.</p>
  <label>Credit Card number:<br>
  <input type="text" value="5457623898234113" id="card" /></label> 
  <input type="button" id="check" value="check" />
 </form> 
+Created by <a href="http://nikhazy-dizajn.hu">Ákos Nikházy</a>
 </body>
 </html>
