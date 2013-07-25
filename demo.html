@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+	<title>isCreditCard demo</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="creditCardNumberCheck.js"></script>
+	<style>#card{border: 2px solid #000}</style>
+	<script>
+	$(document).ready(function()
+	{
+		$("#check").click(function()
+		{
+			//isCreditCard retuns true or false
+			if($("#card").isCreditCard())
+			{
+				$("#card").css('border','2px solid green');
+			} else 
+			{
+				$("#card").css('border','2px solid red');
+			}
+		});
+		
+	});
+	</script>
+</head>
+<body>
+<form>
+<p>This demo starts with a valid credit card number. Change anything in it and most likely you will get a false one.
+ <label>Credit Card number:<br>
+ <input type="text" value="5457623898234113" id="card" /></label> 
+ <input type="button" id="check" value="check" />
+</form> 
+</body>
+</html>
