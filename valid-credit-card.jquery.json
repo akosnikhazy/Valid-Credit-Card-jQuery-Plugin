@@ -1,0 +1,35 @@
+{
+    "name": "valid-credit-card",
+    "title": "Credit Card validation",
+    "description": "jQuery plugin for checking if a Credit Card number is valid",
+    "keywords": [
+        "valid",
+        "creditcard",
+        "banking"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Ákos Nikházy",
+        "url": "http://nikhazy-dizajn.hu/"
+    },
+    "maintainers": [
+        {
+            "name": "Ákos Nikházy",
+            "email": "nikhazy.akos@gmail.com",
+            "url": "http://nikhazy-dizajn.hu/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "GPLv2",
+            "url": "https://github.com/thenakos/Valid-Credit-Card-jQuery-Plugin/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/thenakos/Valid-Credit-Card-jQuery-Plugin",
+    "homepage": "https://github.com/thenakos/Valid-Credit-Card-jQuery-Plugin",
+    "docs": "https://github.com/thenakos/Valid-Credit-Card-jQuery-Plugin",
+    "download": "https://github.com/thenakos/Valid-Credit-Card-jQuery-Plugin",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
