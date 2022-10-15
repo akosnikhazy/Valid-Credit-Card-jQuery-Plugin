@@ -11,11 +11,11 @@
     var subTotal  = 0;
     var digits = this.val().split('').map(Number);
 	
-    // From here it use the Hans Peter Luhn algorithm to check the card number
-    // How it works is you double the value of every second digit, if the doubled
-    // value is bugger than 9 you add up the digits of that number and at the end
-    // you add up all the digits you made this way. If the result is dividable with
-    // ten it is a valid credit card number.
+    // From here it uses the Hans Peter Luhn algorithm to check the card number
+    // How it works is you double the value of every second digit; if the doubled
+    // value is bigger than 9 you add up the digits of that number and at the end
+    // you add up all the digits you made this way with the digits you didn't touch. 
+    // If the result is dividable by ten it is a valid credit card number.
 
     for(var i = 15; i >= 0; i--)
 	{
