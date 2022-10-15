@@ -1,41 +1,41 @@
+"use strict";
 (function ( $ ) {
-  var numToTen,subTotal,evenCheck,evenSplit,lastNum;
-  
+
   $.fn.isCreditCard = function() {
-    var n = this.val();
+  
+    // Gatekeeping: can't be a card number if not 16 char long or not a number.
+	// we just stop here.
+    if(this.val().length != 16 || isNaN(this.val())) {return false;}
     
-    //Can't be card number if not 16 char long or not a number. return false
-    if(n.length != 16 || isNaN(n)){return false;}
-    
-    //Set everything
-    numToTen=subTotal=evenCheck=evenSplit=lastNum=0;
-    
-    //From here it use the Hans Peter Luhn algorithm to check the card number
-    var nums = n.split('');
-    var lastNum = nums[15];
-   
+    // Set everything
+    var subTotal  = 0;
+    var digits = this.val().split('').map(Number);
+	
+    // From here it use the Hans Peter Luhn algorithm to check the card number
+    // How it works is you double the value of every second digit, if the doubled
+    // value is bugger than 9 you add up the digits of that number and at the end
+    // you add up all the digits you made this way. If the result is dividable with
+    // ten it is a valid credit card number.
 
-    for(var i = 0; i<=14; i++){
-  	if(i%2 == 0){
-		  evenCheck = parseInt(nums[i])*2;
-
-		  if(evenCheck > 9){
-			subTotal+=parseInt(1 + (evenCheck-10));
-		  } else {
-			subTotal+=evenCheck;
-		  }
-
-		} else {
-		  subTotal+=parseInt(nums[i]);
+    for(var i = 15; i >= 0; i--)
+	{
+		if(i%2 != 0)
+		{
+			subTotal += digits[i];
+			continue;
 		}
-    }
-
-    while(subTotal%10 != 0){
-      subTotal++;
-      numToTen++;
-    }
-    if(numToTen != lastNum)
-      return false;
-      
-    return true;
+		
+		if(digits[i]*2 > 9)
+		{
+			subTotal += 1 + (digits[i]*2-10);
+			continue;
+		}
+		
+		subTotal += digits[i]*2;
+	}
+	
+	// if the total is not dividable by ten it is not valid
+	if(subTotal%10 !== 0) return false;
+	  
+	return true;
 };}( jQuery ));
