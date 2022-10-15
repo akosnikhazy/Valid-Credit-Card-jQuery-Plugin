@@ -10,7 +10,7 @@
     // From here it use the Hans Peter Luhn algorithm to check the card number
     // How it works is you double the value of every second digit, if the doubled
     // value is bigger than 9 you add up the digits of that number and at the end
-    // you add up all the digits you made this way. If the result is dividable with
+    // you add up all the digits you made this way. If the result is dividable by
     // ten it is a valid credit card number.
     for(var digits = this.val().split('').map(Number), i = 14; i >= 0; i -= 2)
     {
