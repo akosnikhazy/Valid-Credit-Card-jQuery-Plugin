@@ -28,7 +28,8 @@
 </head>
 <body>
 <form>
-<p>This demo starts with a valid credit card number. Change anything in it and most likely you will get a false one.</p>
+<p>This demo starts with a valid credit card number. Change anything in it and most likely you will get a false one. I do not ask you to trust in an input field on the internet. This saves nothing, but do not trust me, <a href="https://github.com/akosnikhazy/Valid-Credit-Card-jQuery-Plugin">trust the code</a>.</p>
+<p>It uses the Hans Peter Luhn algorithm to check the card number. How it works is you double the value of every second digit; if the doubled value is bigger than 9 you add up the digits of that number and at the end you add up all the digits you made this way with the digits you didn't touch. If the result is dividable by ten, it is a valid credit card number.</p>
  <label>Credit Card number:<br>
  <input type="text" value="5457623898234113" id="card" /></label> 
  <input type="button" id="check" value="check" />
