@@ -3,9 +3,9 @@
 
   $.fn.isCreditCard = function() {
   
-    // Gatekeeping: can't be a card number if not 16 char long or not a number.
+    // Gatekeeping: can't be a card number if not 16 char long.
     // we just stop here.
-    if(this.val().length != 16 || isNaN(this.val())) {return false;}
+    if(this.val().length != 16) {return false;}
     
     // From here it use the Hans Peter Luhn algorithm to check the card number
     // How it works is you double the value of every second digit, if the doubled
